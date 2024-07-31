@@ -1,5 +1,5 @@
 ---
-import { formatDate } from "../utils";
+import { formatDate, capitalizeText } from "../utils";
 import type { CollectionEntry } from "astro:content";
 
 const { article } = Astro.props;
@@ -31,7 +31,7 @@ interface Props {
           {
             article.data.tags.map((tag: string) => (
               <span class="px-2 py-1 border text-white rounded-full text-xs mr-2">
-                {tag}
+                #{capitalizeText(tag)}
               </span>
             ))
           }
